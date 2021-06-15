@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .target{
+            border: 1px solid;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>jQuery 노드 변경 API</h2>
+    
+<h3>1) 추가</h3>
+    
+<div class="target"><strong>content1</strong></div><br>
+<div class="target"><strong>content2</strong></div>
+
+<script>
+    $('.target').before('<div>before</div>');
+    $('.target').after('<div>after</div>');
+    $('.target').prepend('<div>prepend</div>');
+    $('.target').append('<div>append</div>');
+</script>
+
+<h3>2) 제거</h3>
+<div class="target" id="target1">remove</div>
+<div class="target" id="target2">empty</div>
+<input type="button" value="remove" id="btn1"/>
+<input type="button" value="empty" id="btn2"/>
+<script>
+    $('#btn1').click(function(){
+        $('#target1').remove();
+    })
+    $('#btn2').click(function(){
+        $('#target2').empty();
+    })
+    
+</script>
+
+<h3>3) 교체</h3>
+<div class="target" id="target3">target1</div>
+<div class="target" id="target4">target2</div>
+<input type="button" value="replaceAll target 1" id="btn3"/>
+<input type="button" value="replaceWith target 2" id="btn4">
+<script>
+    $('#btn3').click(function(){
+        $('<div>replaceAll</div>').replaceAll('#target3');
+    })
+    $('#btn4').click(function(){
+        $('#target4').replaceWith('<div>replaceWith</div>');
+    })
+</script>
+
+<h3>4) 복사</h3>
+<div class="target" id="targetRe1">target1</div>
+<div class="target" id="targetRe2">target2</div>
+<div id="source">clone</div>
+<input type="button" value="clone replaceAll target 1" id="btnRe1"/>
+<input type="button" value="clone replaceWith target 2" id="btnRe2">
+<script>
+    $('#btnRe1').click(function(){
+        $('#source').clone().replaceAll('#targetRe1');
+    })
+    $('#btnRe2').click(function(){
+        $('#targetRe2').replaceWith($('#source').clone());
+    })
+</script>
+
+<h3>5) 이동</h3>
+<div class="target" id="targetMV">target</div>
+<div id="move">move</div>
+<input type="button" value="append source to target" id="btnMV"/>
+<script>
+    $('#btnMV').click(function(){
+        $('#targetMV').append($('#move'));
+    })
+</script>
+
+</body>
+</html>

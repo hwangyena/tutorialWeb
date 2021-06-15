@@ -1,0 +1,37 @@
+#article{
+  padding-left: 20px;
+}
+/*800px보다 크면 grid*/
+@media (min-width: 800px) {
+  #grid{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+  #grid ol{ /*부모가 grid인 ol태그*/
+    padding-left: 35px;
+  }
+  h1{
+    border-bottom: 1px solid gray;
+  }
+  ol{
+    border-right: 1px solid gray;
+    width: 70px;
+    padding: 10px;
+    margin-top: 0px;
+    text-decoration-color:
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+h1{
+  margin: 0px;
+  padding: 10px;
+  font-size: 60px;
+  text-align: center;
+}
+body{
+  margin: 0px;
+}

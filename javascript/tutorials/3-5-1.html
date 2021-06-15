@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<body>
+    <h2>Node 관계 API</h2>
+    <div id="start">
+    <ul>
+        <li class="marked">HTML</li>
+        <li>CSS</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        var start = document.getElementById('start');
+        console.log(start);
+        
+        console.log(start.firstChild);
+        console.log(start.firstChild.nextSibling);
+        console.log(start.firstChild.nextSibling.nextSibling);
+        console.log(start.firstChild.nextSibling.nextSibling.nextSibling); start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling.style.color="green";
+        
+        console.log(start.firstChild.nextSibling.firstChild.nextSibling);
+        console.log(start.firstChild.nextSibling.firstChild.nextSibling.parentElement); console.log(start.firstChild.nextSibling.firstChild.nextSibling.parentElement.parentElement);    
+        
+        console.log(start.childNodes);
+        console.group('childNode');
+        for(var i=0; i<start.childNodes.length;i++){
+            console.log(start.childNodes[i]);
+            if(start.childNodes[i].nodeType===3) console.log('text node');
+            else start.childNodes[i].style.backgroundColor="powderblue";
+        }
+        console.groupEnd();
+    </script>
+    </div>
+</body>
+</html>

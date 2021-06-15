@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      ul>li{color:green;}
+      #idsel {color:blue;}
+      .classel {color:black;}
+        .boxex{
+            border: 10px solid black; float:left;
+            padding: 10px;
+            margin: 20px;
+            width: 300px;
+        }
+        #small, #large{
+            margin:10px;
+            width:150px;
+        
+        }
+        #small{
+            border:10px solid green;
+        }
+        #large{
+            border:30px solid green;        
+        }
+        h2{
+            border:1px solid purple;
+            margin:100px;
+        }
+        #parent{
+            border: 1px solid tomato;
+            margin-top:100px;
+        }
+        #child{
+            background-color: cornflowerblue;
+            margin-top:50px;
+        }
+        #empty{
+            margin-top: 50px;
+            margin-bottom: 100px;
+/*            border:1px solid blue;*/
+        }
+        #normal{
+            background-color: aquamarine;
+            margin-top: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>수업순서</h1>
+    <ul>
+      <li>html</li>
+      <!-- 우선순위비교 -->
+      <li id="idsel" class="classel"
+      style="color:purple">css</li>
+      <li>js</li>
+    </ul>
+    <div class="boxex">
+    [Merlin] Ultra Music(Ultra Records); LatinAutorPerf, ASCAP, BMI - Broadcast Music Inc., LatinAutor, CMRRA, LatinAutor - UMPG, Warner Chappell, UNIAO BRASILEIRA DE EDITORAS DE MUSICA
+    </div>
+    <div class="boxex">
+    [Merlin] Ultra Music(Ultra Records); LatinAutor - Warner Chappell, ASCAP, LatinAutorPerf, LatinAutor, CMRRA, Songtrust, Warner Chappell, UNIAO BRASILEIRA DE EDITORAS DE MUSICA - UBEM, PEDL
+    </div><div style="clear: both"></div>
+    <h1>Margine</h1>
+    <div id="small">HELLO</div>
+    <div id="large">Hello</div>
+    <h2>hello world!</h2>
+    <h2>hello world!</h2>
+    <div id="parent">
+        <div id="child">
+        Hello world
+        </div>
+    </div>
+    <div id="empty"></div>
+    <div id="normal">normal</div>
+  </body>
+</html>

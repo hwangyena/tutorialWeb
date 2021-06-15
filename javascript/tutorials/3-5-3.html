@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<body>
+<h2 style="text-align: center">노드의 변경</h2>
+<h3>1) 노드 추가</h3>
+    <ul id="target">
+        <li>HTML</li>
+        <li>CSS</li>
+
+    </ul>
+    <input type="button" onclick="callAppendChild()" value="appendChild()"/>
+    <input type="button" onclick="callInsertBefore()" value="callInsertBefore()"/>
+
+    <script>
+        function callAppendChild(){
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('JavaScript');
+            li.appendChild(text);
+            target.appendChild(li);
+        }
+        
+        function callInsertBefore(){
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('JavaScript');
+            li.appendChild(text);
+            target.insertBefore(li, target.firstChild);
+        }
+    </script>
+    
+<h3>2) 노드 제거</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="target2">JavaScript</li>
+    </ul>
+    <input type="button" onclick="callRemoveChild()" value="removeChild()"/>
+    <script>
+        function callRemoveChild(){
+            var target = document.getElementById('target2');
+            target.parentNode.removeChild(target);
+        }
+    </script>
+    
+<h3>3) 노드 교환</h3>
+    <div id="target3">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="target4">JavaScript</li>
+    </ul>
+    <input type="button" onclick="callReplaceChild_ol()" value="replaceChild()"/>
+    <script>
+        function callReplaceChild_ol(){
+            var ol = document.createElement('ol');
+            var target = document.getElementById('target3');
+            var ul = document.querySelector('#target3>ul');
+            console.log(ul);
+            
+            for(var i=0; i<ul.children.length;i++){
+                var li = document.createElement('li');
+                li.appendChild(ul.children[i].firstChild);
+                ol.appendChild(li);
+            }
+            console.log("target: ",target.firstChild.nextSibling);
+            target.replaceChild(ol, target.firstChild.nextSibling);
+        }
+        
+        function callReplaceChild(){
+            var a = document.createElement('a');
+            a.setAttribute('href', 'demo.html');
+            a.appendChild(document.createTextNode('demo html file'));
+            
+            var target = document.getElementById('target4');
+            console.log(target);
+            console.log(target.firstChild);
+            target.replaceChild(a, target.firstChild);
+        }
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+<h2 style="text-align: center">프로퍼티 리스너</h2>
+<input type="button" id="target" value="button" />
+<script>
+    var t = document.getElementById('target');
+    t.onclick = function(event){
+//        alert('Hello world, '+event.target.value);
+        var event = event || window.event;
+        var target = event.target || event.srcElement;
+        console.dir(event);
+    }
+</script>
+</body>
+</html>

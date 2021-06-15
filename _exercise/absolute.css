@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+}
+div{
+    display: inline-block;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    background-color: beige;
+    position:relative;
+}
+
+.red{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    right: 0;
+    top:0%;
+    position: absolute;
+}
+
+.blue{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+.yellow{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;    
+    position: absolute;
+    left: 0;
+}

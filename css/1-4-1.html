@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width:800px;
+            border: 1px solid gray;
+        }
+        header{
+            border-bottom: 1px solid gray;
+            padding-left: 20px;
+            
+        }
+        footer{
+            border-top: 1px solid gray;
+            padding:20px;
+            text-align: center;
+        }
+        .content{
+            display: flex;
+        }
+        .content nav{
+            border-right: 1px solid black;
+            order:-1;
+        }
+        .content aside{
+            border-left: 1px solid black;
+        }
+        nav, aside{
+            flex-basis: 200px;
+            flex-shrink: 0;
+        }
+        main{
+            padding:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>생활코딩</h1>
+        </header>
+        <section class="content">
+           <main>
+                JSP는 웹 페이지 영역에서 사용되고, Spring은 웹 서비스 전반적 환경을 구성합니다. Spring이 나라라고 한다면, JSP는 도시 입니다. 스프링은 프로그램 전반적인 근본이 되는 환경을 구축하고있고, JSP는 그 환경의 일부분에 사용되는 언어입니다.
+                <br>
+                
+            </main>
+            <nav>
+                <ul>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javascript</li>
+                </ul>
+            </nav>
+            <aside>
+                AD
+            </aside>
+        </section>
+        <footer>
+            <a href="https://opentutorials.org/course/2418/13526">홈페이지</a>
+        </footer>
+    </div>
+</body>
+</html>

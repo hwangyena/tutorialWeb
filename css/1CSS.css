@@ -1,0 +1,42 @@
+ul li{
+  color:red;
+}
+
+#lecture>li{ /*lecture 직계자손에만 적용 */
+  border:1px solid green;
+}
+
+ul, ol{ /*서로 대등한*/
+  background-color: powderblue;
+}
+a:visited{/*방문함*/
+  color:darksalmon;
+}
+a:link{/*방문하지않음*/
+  color:black;
+}
+a:hover{/*위에 마우스 올라갈 시*/
+  color:cornflowerblue;
+}
+a:active{/*클릭시*/
+  color:green;
+}
+input:focus{/*선택후 입력시*/
+  background-color: black;
+  color: white;
+}
+
+#bigfont{
+  font-size: 2rem;
+  text-align: center;
+  color:#BF8494;
+}
+#smallfont{
+  font-size:1rem;
+  color:#58788C;
+  border:2px solid green;
+  display:inline;
+  padding: 10PX;
+}
+
+body{}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<body>
+<h2 style="text-align: center">JSON</h2>
+Console 창을 확인하세요!
+<script>
+    console.group('기존 text');
+    var info= '{\
+    "font_face" : "Incosolata",\
+    "font_size" : 30,\
+    "ignored_packages":\
+    [\
+    ],\
+    "line-numbers" : true\
+    }'
+    console.log(info);
+    console.groupEnd();
+    
+    console.group('JSON.parse');
+    var infoobj = JSON.parse(info);
+    console.log(infoobj);
+    for(var i in infoobj){
+        console.log("for ",i, infoobj[i]);
+    }
+    console.groupEnd();
+    
+    console.group('JSON.stringify');
+    var infostr = JSON.stringify(infoobj);
+    console.log(infostr);
+    console.groupEnd();
+
+</script>
+</body>
+</html>

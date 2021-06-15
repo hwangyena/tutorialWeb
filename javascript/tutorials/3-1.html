@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        input{
+            padding:10px;
+            position: fixed;
+            top:20px;
+            right:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. getElementsByTagName</h1>
+   <h2>1-1. 태그 element 가져오기</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        var lis = document.getElementsByTagName('li');
+        for(var i=0; i < lis.length; i++){
+            lis[i].style.color='tomato';   
+        }
+    </script>
+    <h2>1-2. 특정 태그 element 가져오기</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVAScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    
+    <script>
+        var lis2 = document.getElementsByTagName('ul')[1];
+        var ol = lis2.getElementsByTagName('li');
+        for(var i=0; i<ol.length; i++){
+            ol[i].style.color='blue';    
+        }
+    </script>
+    <h1>2. getElementsByClassName</h1>
+     <ul>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li class="active">JavaScript</li>
+    </ul>
+    <script>
+        var act = document.getElementsByClassName('active');
+        for(var i=0; i < act.length; i++){
+            act[i].style.color='green'; 
+        }
+    </script>
+    <h1>3. getElementByID</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="active2">JavaScript</li>
+    </ul>
+    <script>
+        var li = document.getElementById('active2');
+        li.style.color='brown';
+    </script>
+    <h1>4. querySelector(All)</h1>
+    <div class="quex">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li class="active3">JAVAScript</li>
+        </ul>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+    </div>
+    
+    <script>
+        var li = document.querySelector('.quex>ul>li');
+        li.style.color="purple";
+        var cl = document.querySelector('.active3');
+        cl.style.color="skyblue";
+        
+        var lis = document.querySelectorAll('.quex>ol>li');
+        for(i in lis){
+//            console.log(i);
+            lis[i].style.color='#FFAAFF';
+        }
+    </script>
+    <br>
+    <input type="button" value="뒤로가기" onclick="window.open('allabout.html', '_self')"/>
+</body>
+</html>

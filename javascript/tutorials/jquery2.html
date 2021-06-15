@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+   <h1>jQuery 객체</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    
+    <script>
+        console.group('jquery basic');
+        var li = $('li');
+        console.log(li);
+//        li.css('text-decoration','underline');
+        console.log(li.css('text-decoration'));
+        for(var i=0; i<li.length; i++)
+            console.log(li[i]);
+        console.groupEnd();
+    </script>
+    
+    <ol>
+        <li>programming C</li>
+        <li>JAVA</li>
+        <li>Python</li>
+    </ol>
+    
+    <script>
+        console.group('map');
+        var list = $('ol>li');
+        list.map(function(index, elem){
+            console.log(index, elem);
+            $(elem).css('color', 'green');
+        });
+        console.groupEnd();
+    </script>
+    
+    <a href="https://api.jquery.com/">jQuery API</a>
+</body>
+</html>

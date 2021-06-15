@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    body{
+        padding:0;
+        margin:0;
+    }
+    h3{
+        background-color: gainsboro;
+    }
+    #target{
+        width:100px;
+        height:100px;
+        border:50px solid #1065e6;
+        padding:50px;
+        margin:50px;
+    }
+    .ex2{
+        padding:50px;
+        margin:50px;
+        border:50px solid slateblue;
+    }
+    #target2{
+        width:100px;
+        height: 100px;
+    }
+    #target3{
+        width: 100px;
+        border: 50px solid forestgreen;
+        height: 200px;
+        margin: 50px;
+    }
+</style>
+</head>
+<body>
+<h2 style="text-align: center">문서의 기하학적 특성</h2>
+
+<h3>1) 요소의 크기와 위치</h3>
+<h4>예제1.</h4>
+<div id="target">
+        Coding
+</div>
+
+<h4>예제 2.</h4>   
+<div class="ex2">
+    <div class="ex2" id="target2">
+        Coding
+    </div>
+</div>
+<script>
+    var t = document.getElementById('target');
+    console.log(t.getBoundingClientRect());
+    
+    var t2 = document.getElementById('target2');
+    console.log(t2.getBoundingClientRect());
+    console.log(t2.offsetParent);
+</script>
+
+<h3>2) ViewPort</h3>
+<div id="target3">Coding</div>
+<script>
+    var t3 = document.getElementById('target3');
+//    setInterval(function(){
+//        console.log('getBoundingClientRect: ', t3.getBoundingClientRect().top, 'pageYOffset: ', window.pageYOffset);
+//    }, 1000)
+    console.log("content-body 사이의 거리 : ", t3.getBoundingClientRect().top+window.pageYOffset);
+</script>
+
+<h3>3) scroll을 제어하는 방법</h3>
+<input type="button" value="scroll(0, 1000)" id="scrollBtn"/>
+<input type="button" value="scroll(0, 0)" onclick="eventClick()"/>
+<script>
+    var btn = document.getElementById('scrollBtn').addEventListener('click', function(){window.scrollTo(0, -1000);})
+    function eventClick(){
+        window.scrollTo(0,0);
+    }
+</script>
+<h3>4) screen 크기</h3>
+<script>    
+    console.group('screen size');
+    console.log('window.innerWidth:', window.innerWidth, 'window.innerHeight:', window.innerHeight);
+    console.log('screen.width:', screen.width, 'screen.height:', screen.height);
+    console.groupEnd();
+</script>
+</body>
+</html>

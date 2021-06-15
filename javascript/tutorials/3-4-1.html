@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<body>
+    <h2>식별자 API</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="active" class="important current">JavaScript</li>
+    </ul>
+    
+    <script>
+        console.log(document.getElementById('active').tagName);
+        var active = document.getElementById('active');
+        //Element id
+        console.log("id 변경 전 : "+active.id);
+        active.id = "deactive";
+        console.log("id 변경 후 : "+active.id);
+        
+        //Element className
+        console.log("current 삭제 전 : "+active.className);
+        active.className = "important";
+        console.log("current 삭제 후 : "+active.className);
+        active.className = "important current name";
+        console.log("current, name 추가 : "+active.className);
+        
+        //Element classList
+        console.group("Element classList");
+        console.log(active.classList);
+        for(var i=0; i<active.classList.length; i++) console.log(active.classList[i]);
+        
+        console.group("remove");
+        active.classList.remove('important');
+        console.log(active.classList);
+        console.groupEnd();
+        
+        console.group("add");
+        active.classList.add('important');
+        console.log(active.classList);
+        console.groupEnd();
+        
+        console.group("toggle");
+        active.classList.toggle('name');
+        console.log(active.classList);
+        active.classList.toggle('name');
+        console.log(active.classList);
+        console.groupEnd();
+        
+        console.groupEnd();
+    </script>
+</body>
+</html>

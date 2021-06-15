@@ -1,0 +1,88 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .ex{
+                color:blue;
+                padding-left: 20px;
+                font-size: 5px;
+            }
+            .im{
+                color: tomato;
+            }
+            h2{
+                padding-left:10px;
+            }
+            h3{
+                padding-left:20px;
+            }
+        </style>
+    </head>
+    <body> 
+    <h1>1. 문자와 문자열의 차이</h1>
+    <ul>
+        <li>'A' : 문자, 한글자만 사용, 작은따옴표</li>
+        <li>"ABC" : 문자열, 여러 글자 사용, 큰따옴표</li>
+    </ul>
+    
+    <h1>2. 문자열 사용 </h1>
+    <h2>1) 포인터 사용</h2>
+    <h3>char* p = "abcde";</h3>
+    <ul>
+        <li>출력할때 <b>%s 사용</b></li>
+        <li>"abcde"는 문자열리터럴</li>
+        <li>p는 문자열의 주소를, p*는 문자열의 아스키코드를 가리킴</li>
+        <li><b>인덱스</b>로 접근 : p[0]~p[5]로 문자열 하나씩 읽기 가능 <b>%c 사용</b></li>
+        <li style="color:firebrick"><b>읽기전용 - 덮어쓰기 불가능 / 동적할당시 쓰기 가능</b></li>
+        <li style="color:firebrick">문자열의 마지막에 끝을 나타내는 널 문자 붙음 <b>NULL == \0</b></li>
+    </ul>   
+    <div class="ex">*코드 1</div>
+    <h2>2) 배열 사용</h2>
+    <h3>char str[6] = "abcde";</h3>
+    <ul>
+       <li>최소 크기 : 문자열 크기 + null까지 포함한 크기</li>
+        <li>배열 인덱스에 문자 하나씩 넣어줌</li>
+        <li>출력은 포인트와 같은 방법 : <b>printf("%s",str);</b></li>
+        <li>인덱스로 하나씩 접근 : str[0]~str[5] <b>printf("%c", str[0])</b></li>
+        <li><b>char str[] = "abc"; 처럼 크기 생략 가능</b></li>
+        <li style="color:firebrick"><b>배열 선언 즉시 문자열로 초기화 해줘야한다.</b> <div class="ex">*코드 2</div></li>
+        <li> 이미 선언된 배열에 문자열을 할당하고 싶으면 1) 인덱스 요소에 하나씩 넣어주거나
+        2) <b>strcpy 함수를 사용</b><div class="ex">*코드 3</div></li>
+    </ul>
+    
+    <h1>3. 문자열 입력받기</h1>
+    <h2>1) 포인터 사용</h2>
+    <h3>char *p = malloc(sizeof(char) * 10));</h3>
+    <h3>scanf("%s", &p);</h3>
+    <ul>
+        <li>포인터는 꼭 공간 만들어주기 > 나중에 <b>free() </b>해주기!</li>
+    </ul>
+
+    <h2>2) 배열 사용</h2>
+   <h3>scanf("%s", &str)</h3>
+
+   <div class="ex">포인터, 배열 차이 사진 보여주기!!</div>
+    <div class="ex">*문제 풀기</div>
+    <h1>4. 문자열 함수</h1>
+       <h2 class="im">1) strlen : 문자열 길이</h2>
+       <h2 class="im">2) strcmp(a,b) : 문자열 비교 / 같으면 0</h2>
+       <h3> - a>b면 1, 반대면 -1, 같으면 0</h3>
+       <h3> - ==와의 비교 설명하기 (==은 주소값이 달라서 결국 같다고 비교 못함)</h3>
+       <h2 class="im">3) strcpy(a, b) : a를 b에 복사</h2>
+        <h3> - 배열>배열은 괜찮은데 배열 > 포인터는 X(동적할당 필요)</h3>
+       <h2 class="im">4) strcat(a, b) : a에 b붙이기</h2>
+       <h2>5) sprintf(배열, 서식, 값) : 배열에 저장</h2>
+       <h3> - 배열 또는 동적할당해준 포인터 사용 가능</h3>
+       <h3> - 서식에 %d %c %f 등 다양한 자료형으로 문자열을 만듦</h3>
+       <h2>6) strchr(배열, 'a') : 배열에서 a 검색 - 포인터 반환</h2>
+       <h3> - 포인터에서 다음에 오는 문자를 찾아준다</h3>
+       <h2>7) strrchr(문자열, 검색할 문자) : 오른쪽부터 문자 찾기</h2>
+       <h2>8) strstr(문자열, "den") : 문자열 찾기</h2>
+       <h2 class="im">9) strtok(대상문자열, "기준 문자") : 문자열 자르기</h2>
+       <h3> - 보통 while문과 많이 사용</h3>
+        <h3> - strtok(NULL, "기준문자")  : 기준문자를 널 문자로 채워줌</h3>
+        <h3> - Apple(\n)banana(\n)melon</h3>
+      <div class="ex">*예제 파일 참고*</div>
+
+</body>
+</html>

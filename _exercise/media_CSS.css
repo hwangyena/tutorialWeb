@@ -1,0 +1,45 @@
+/* 해당 웹페이지를 프린트 할때만 실행 */
+@media print{
+  h1{
+    color: brown;
+  }
+}
+
+h1{
+  font-size: 3rem;
+}
+/* max-width:900px 이면 실행 -> 가장 큰 화면 사이즈가 900이면 실행 -> 900이하 실행 */
+/* @media (max-width: 600px) {
+  body{
+    background-color: coral;
+  }
+  h1{
+    color: white;
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1000px){
+  body{
+    background-color: beige;
+  }
+  h1{
+    font-size: 2rem;
+  }
+} */
+
+/* 900~1000px 사이 */
+@media (min-width: 900px) and (max-width: 1000px){
+  body{
+    background-color: skyblue;
+  }
+}
+
+@media (max-width: 1400px){
+  body{
+    background-color: black;
+  }
+  h1{
+    color: white;
+  }
+}

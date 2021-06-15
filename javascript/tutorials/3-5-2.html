@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<body>
+<h2 style="text-align: center">Node 종류 API</h2>
+<h3>1)nodeType과 nodeName 비교하기</h3>
+<div id="start">
+    <ul>
+        <li class="marked">HTML</li>
+        <li>CSS</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+<script>
+    console.group('node의 type list');
+    for(var name in Node){
+        console.log(name, Node[name]);
+    }
+    console.groupEnd();
+    
+    console.group('nodeType');
+    var body = document.getElementById('start');
+    console.log("element:",body.nodeType);
+    console.log("text:",body.firstChild.nodeType);
+    console.log("document:",document.nodeType);
+    
+    var active = document.getElementById('active');
+    for(var i=0; i<active.childNodes.length; i++){
+        if(active.childNodes[i].nodeType === 1){
+            active.childNodes[i].style.color="blue";
+        }
+        else continue;
+    }
+    console.groupEnd();
+    
+    console.group('nodeName');
+    console.log("element:", body.nodeName);
+    console.log("text:", body.firstChild.nodeName);
+    console.log("document:", document.nodeName);
+    console.groupEnd();
+</script>
+</div>
+
+<h3>2) 재귀함수</h3>
+<div id="refun">
+    <ul>
+        <li>HTML</li>
+        <li><a href="demo.html">CSS</a></li>
+        <li>JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li><a href="demo.html">DOM</a></li>
+                <li>BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        console.group('재귀함수 1');
+        function traverse(target, callback){
+            if(target.nodeType === 1 ){ //ELEMENT_NODE 인 경우
+                //if(target.nodeName === 'A')
+                callback(target);
+                var c = target.childNodes;
+                for(var i=0; i<c.length; i++){
+                    traverse(c[i], callback);
+                }
+            }
+        }
+        traverse(document.getElementById('refun'), function(elem){
+            console.log(elem);
+            elem.style.color="darkgreen";
+            if(elem.nodeName === 'A') elem.style.backgroundColor="powderblue";
+        });
+        console.groupEnd();
+    </script>
+</div>
+</body>
+</html>

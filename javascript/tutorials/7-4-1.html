@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        p{
+            background-color: skyblue;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>폼</h2>    
+<h3>1) submit</h3>
+<form action="demo.html" id="target">
+    <label for="name">name</label>
+    <input id="name" type="name"/>
+    <input type="submit" />
+</form>
+<script>
+    var t=document.getElementById('target');
+    t.addEventListener('submit',function(event){
+      if(document.getElementById('name').value.length === 0){
+          alert('Name 필드의 값이 누락 되었습니다.');
+          event.preventDefault();
+      }  
+    })
+</script>
+
+<h3>2) change</h3>
+<p id="result"></p>
+<input type="name" id="target2"/>
+<script>
+    var t2 = document.getElementById('target2');
+    t2.addEventListener('change', function(event){
+        if(t2.value.length != 0){
+            document.getElementById('result').innerHTML = this.value;
+            //또는 event.target.value 해도 동일한 효과
+        }
+    })
+</script>
+
+<h3>3) blur, focus</h3>
+<input type="name" id="target3"/>
+<script>
+    var t3 = document.getElementById('target3');
+    t3.addEventListener('blur', function(event){
+        alert('blur');
+    });
+    t3.addEventListener('focus', function(event){
+        alert('focus');
+    });
+</script>
+</body>
+</html>

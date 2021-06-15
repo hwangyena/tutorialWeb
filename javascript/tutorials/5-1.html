@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<body>
+<h2>값 API</h2>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="target">JavaScript</li>
+</ul>
+<input type="button" value="data 변경" onclick="_nodeValue()">
+<script>
+    var t = document.getElementById('target').firstChild;
+    console.log(t.data);
+    console.log(t.nodeValue);
+    
+    function _nodeValue(){
+        t.nodeValue = 'text API';
+    }
+</script>
+</body>
+</html>

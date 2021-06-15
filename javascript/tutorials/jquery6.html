@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $('html').on('click','a, li', function(event){
+            console.log(this.tagName);
+        })
+    </script>
+    
+    <style>
+        p{
+            background-color: darkgrey;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center">jQuery 이벤트</h2>
+
+<h3>1) 기본 JavaScript와 차이 비교</h3>
+<input type="button" id="pure" value="pure" />
+<input type="button" id="jquery" value="jQuery" />
+<script>
+    // 순수하게 구현했을 때
+    var target = document.getElementById('pure');
+    if(target.addEventListener){
+        target.addEventListener('click', function(event){
+            alert('pure');
+        });
+    } else {    //예전 버전
+        target.attachEvent('onclick', function(event){
+            alert('pure 구 버전');
+        });
+    }
+ 
+    // jQuery를 사용했을 때 - 사용자 친화적
+    $('#jquery').on('click', function(event){
+        alert('jQuery');
+    })
+</script>
+
+<h3>2) onAPI</h3>
+<h4>- Selector</h4>
+<ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JS</a></li>
+</ul>
+
+<h4>- 다중등록</h4>
+<p id="status"></p>
+<input type="text" id="target2">
+<script>
+    //방법 1
+//    $('#target2').on('focus blur', function(e){
+//        $('#status').html(e.type+ " : "+this.value);
+//    })
+    
+    //방법 2
+    var handler = function(e){
+        $('#status').html(e.type+ " : "+this.value);        
+    }
+    $('#target2').on({
+        'focus':handler,
+        'blur' : handler
+    })
+    
+    //방법 3
+//    $('#target2').on('blur', handler).on('focus', handler);  
+</script>
+
+<h4>- 이벤트 제거</h4>
+<input type="text" id="target3">
+<input id="remove"  type="button" value="remove" />
+<p id="status2"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  var handler = function(e){
+    $('#status2').text(e.type+Math.random());
+  };
+  $('#target3').on('focus blur', handler)
+  $('#remove').on('click' , function(e){
+    $('#target3').off('focus', handler);
+    console.log(32);
+  })
+</script>
+</body>
+</html>

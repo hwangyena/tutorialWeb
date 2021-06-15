@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>  
+    <style>
+        li{
+            padding:10px;
+            list-style: none;
+        }
+        h3{
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>1. window 창 제어</h1>
+<ul>
+    <li>
+        새로운 창에 URL 문서 로드 <br>
+        <input type="button" onclick="open1()" value="window.open('demo.html')">
+    </li>
+    <li>
+       _self는 실행되는 창을 의미, 현재 문서에 스크립트 실행, a태그와 동일한 역할<br>
+        <input type="button" onclick="open2()" value="window.open('demo.html','_self')">
+    </li>
+    <li>
+       _blank는 새로운 창을 연다.<br>
+        <input type="button" onclick="open3()" value="window.open('demo.html','_blank')">
+    </li>
+    <li>
+       창에 이름을 지정한다. 재실행 했을 때 동일한 이름의 창이 있으면 그곳으로 문서가 로드된다.<br>
+        <input type="button" onclick="open4()" value="window.open('demo.html','chang')">
+    </li>
+    <li>
+       세 번째 인자는 새창의 모양과 관련된 속성이 온다.<br>
+        <input type="button" onclick="open5()" value="window.open('demo.html','_blank', 'width=200, height=200, resizable=yes')">
+    </li>
+</ul>
+<h2>2. 원격제어 (server없어서 적용X)</h2>
+<input type="button" value="open" onclick="winopen();" />
+<input type="text" onkeypress="winmessage(this.value)" />
+<input type="button" value="close" onclick="winclose()" />
+
+<h2>3. 보안 기능</h2>
+<h3><a href="demo3.html">팝업</a></h3>
+
+<script>
+    function open1(){
+        window.open('demo.html');
+    }
+    function open2(){
+        window.open('demo.html', '_self');
+    }
+    function open3(){
+        window.open('demo.html','_blank');
+    }
+    function open4(){
+        window.open('demo.html','chang');
+    }
+    function open5(){
+        window.open('demo.html','_blank', 'width=100px, height=100px, resizable=yes');
+    }
+    
+    function winopen(){
+        win = window.open('demo2.html', 'ot', 'width=300px, height=500px');
+    }
+    function winmessage(msg){
+        win.document.getElementById('message').innerText=msg;
+    }
+    function winclose(){
+        win.close();
+    }
+</script>
+</body>
+</html>

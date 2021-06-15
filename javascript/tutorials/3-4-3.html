@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<body>
+<h2>속성 API</h2>
+<a href="http://opentutorials.org" id="target">opentutorials</a>
+<script>
+    var t= document.getElementById('target');
+    console.log(t.getAttribute('href'));
+    console.log(t.getAttribute('id'));
+    t.setAttribute('title', 'opentutorials');
+    console.log(t.getAttribute('title'));
+    console.log(t.hasAttribute('title'));
+    t.removeAttribute('title');
+    console.log(t.hasAttribute('title'));
+</script><br>
+<a href="./demo.html" id="target2">attribute와 property 차이</a>
+<script>
+    var dif = document.getElementById('target2');
+    console.log("attribute: ",dif.getAttribute('href'));
+    console.log("property: ",dif.href);
+</script>
+</body>
+</html>

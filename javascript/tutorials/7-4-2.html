@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            window.onload = function(){
+                var t=document.getElementById('target');
+                console.log("head(1): ",t);                
+            }
+            
+            window.addEventListener('load', function(){
+                var t=document.getElementById('target');
+                console.log("head(2): ",t);                
+            });
+            
+            window.addEventListener('DOMContentLoaded', function(){
+                var t=document.getElementById('target');
+                console.log("head(3): ",t);                
+            });
+        </script>
+    </head>
+    <body>
+        <h2 style="text-align: center">문서 로딩</h2>
+        <p id="target">Hello</p>
+        
+        <script>
+            var t=document.getElementById('target');
+            console.log("body: ",t);
+        </script>
+    </body>
+</html>

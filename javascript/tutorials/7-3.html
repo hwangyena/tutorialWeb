@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<body>
+<h2>이벤트 기본 동작 취소</h2>
+<h3>1) inline 방식</h3>
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org" onclick="if(document.getElementById('prevent').checked) return false;">opentutorials</a>
+</p>
+<form action="http://opentutorials.org" onsubmit="if(document.getElementById('prevent').checked) return false;">
+        <input type="submit" />
+</form>
+<h3>2) property 방식</h3>
+<p>
+    <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+</p>
+<p>
+    <a href="http://opentutorials.org">opentutorials</a>
+</p>
+<form action="http://opentutorials.org">
+        <input type="submit" />
+</form>
+<script>
+    document.querySelector('a').onclick = function(event){
+        if(document.getElementById('prevent').checked)
+            return false;
+    };
+     
+    document.querySelector('form').onclick = function(event){
+        if(document.getElementById('prevent').checked)
+            return false;
+    };
+ 
+</script>
+
+<h3>3) addEventListener 방식</h3>
+<p>
+            <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+        </p>
+        <p>
+            <a href="http://opentutorials.org">opentutorials</a>
+        </p>
+        <form action="http://opentutorials.org">
+                <input type="submit" />
+        </form>
+        <script>
+            document.querySelector('a').addEventListener('click', function(event){
+                if(document.getElementById('prevent').checked)
+                    event.preventDefault();
+            });
+             
+            document.querySelector('form').addEventListener('submit', function(event){
+                if(document.getElementById('prevent').checked)
+                    event.preventDefault();
+            });
+ 
+        </script>
+</body>
+</html>

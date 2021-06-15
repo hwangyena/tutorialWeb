@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <h1>JAVAScript</h1>
+    <script>/*javascript임을 알려줌*/
+      document.write(1+1); /*글씨를 출력, 동적*/
+    </script>
+
+    <h1>배열</h1>
+    <script>
+      var names = ["김나나", "정모모"];
+      document.write(names[0]+" ");
+      document.write(names[1]+" ");
+      names.push("박꿍꿍");
+      document.write(names.length+"<br>");
+    </script>
+
+    <h1>반복문</h1>
+    <script>
+      var number = new Array(); //배열 선언
+      var i=0;
+      while(i < 3){
+        number[i] = i;
+        i += 1;
+      }
+      for(var j=0; j<number.length; j++){
+        document.write(number[j]+"<br>");
+      }
+    </script>
+
+    <h1>Loop & Array</h1>
+    <ul>
+    <script>
+      var names = ["김나나", "정모모", "황꿍꿍"];
+      var i=0;
+      while(i<names.length){
+        document.write('<li>'+names[i]+'</li>');
+        i += 1;
+      }
+    </script>
+    </ul>
+
+    <!--onclick : 속성값은 JS와야한다, 해당 태그 클릭시 JS 불러옴
+                웹브라우저에서 일어날 수 있는 이벤트
+        onchange : text메세지 안 내용이 변하면 이벤트 발생
+        onkeydown : 키를 눌렀을때 이벤트 발생
+
+        이런 이벤트를 사용해서 사용자와 상호작용할 수 있다
+    -->
+    <input type="button" value="hi" onclick="alert('hi')">
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('key down')">
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #demo{
+            width:200px;float: left; margin-top:120px;
+            position:fixed;
+            left:600px;
+        }
+        #execute{float: left; margin:0; font-size:0.9em;}
+        #execute{padding-left: 5px}
+        #execute li{list-style: none}
+        #execute pre{border:1px solid gray; padding:10px;}
+        #explain ul{
+            position: fixed;
+            left: 550px;
+            top: 200px;
+            list-style: '- ';
+            line-height: 30px;
+        }
+        #explain input{
+            position: fixed;
+            left: 650px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="demo">
+        <li class="active">HTML</li>
+        <li id="active">CSS</li>
+        <li class="active">JavaScript</li>
+    </ul>
+    <div id="explain">
+      <ul>
+          <li>HTML과 JavaScript는 (class) .active </li>
+          <li>CSS는 (id) #active이다.</li>
+      </ul>
+      <input type="button" value="되돌리기" onclick="$('#demo>li').css('color','black').css('textDecoration','none')"/>
+    </div>
+    <ul id="execute">
+        <li>
+            <center><pre>var lis = document.getElementsByTagName('li');
+            for(var i=0; i&lt;lis.length; i++){
+                lis[i].style.color='blue';   
+            }</pre>
+            <pre> $('li').css('color', 'blue') </pre></center>
+            <input type="button" value="execute" onclick="$('#demo>li').css('color', 'blue')" />
+        </li>
+        <li>
+            <center><pre>var lis = document.getElementsByClassName('active');
+            for(var i=0; i &lt; lis.length; i++){
+                lis[i].style.color='red';   
+            }</pre>
+            <pre>$('.active').css('color', 'red')</pre></center>
+            <input type="button" value="execute" onclick="$('.active').css('color', 'red')" />
+        </li>
+        <li>
+            <center><pre>var li = document.getElementById('active');
+            li.style.color='green';
+            li.style.textDecoration='underline';</pre>
+            <pre>$('$active').css('color', 'green').css('textDecoration','underline');</pre></center>
+            <input type="button" value="execute" onclick="$('#active').css('color', 'green').css('textDecoration', 'underline')" />
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var cowokers = {
+        "programmer":"egoing",
+        "designer":"leezche"
+      };
+      document.write("programmer : "+cowokers.programmer+'<br>');
+      document.write("designer : "+cowokers.designer+'<br>');
+      cowokers.bookkeeper = "duru";
+      cowokers["data scientist"] = "taeho";
+      document.write("bookkeeper : "+cowokers.bookkeeper+'<br>');
+      document.write("data scientist : "+cowokers["data scientist"]+'<br>');
+    </script>
+
+    <h2>Loop</h2>
+    <script>
+      for(var key in cowokers){
+          document.write(key+" : "+ cowokers[key] +'<br>');
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      cowokers.showAll = function(){ //method
+        for(var key in this){ //this 사용시 변수 이름 바뀌어도 영향X
+            document.write(key+" : "+ this[key] +'<br>');
+        }
+      }
+      cowokers.showAll();
+    </script>
+  </body>
+</html>

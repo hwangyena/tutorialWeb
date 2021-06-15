@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>  
+    <style>
+        input{
+            padding: 20px 30px;
+        }
+    </style>
+</head>
+<body>
+   <h1>1. alert</h1>
+    <input type="button" value="alert" onclick="alertfnc();"/>
+    <input type="button" value="console" onclick="consolefnc();">
+    <script>
+        function alertfnc(){
+            alert(1);
+            alert(2);
+            alert(3);
+        }
+        function consolefnc(){
+            console.log(1);
+            console.log(2);
+            console.log(3);
+        }
+    </script>
+    <h1 style="margin-top: 50px">2. confirm</h1>
+    <input type="button" value="confirm" onclick="confirmfnc();"/>
+    <script>
+        function confirmfnc(){
+            if(confirm('confirm 예제 입니다.')){
+                alert('ok');
+            }else{
+                console.log('cancel');
+            }
+        }
+    </script>
+    <h1 style="margin-top: 50px">3. prompt</h1>
+    <input type="button" value="prompt" onclick="promptfnc()"/>
+    <script>
+        function promptfnc(){
+            if(prompt('prompt 예제 입니다.\n이름을 입력하세요.') === 'yena'){
+                console.log('welcome');
+            }else{
+                alert('wrong data');
+            }
+        }
+    </script>
+</body>
+</html>

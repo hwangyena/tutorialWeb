@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h2>jQuery 속성 제어 API</h2> 
+<a href="allabout.html" id="target">메인화면</a>
+<script>
+    console.group('jQuery');
+    var t = $('#target');
+    console.log(t.attr('href'));
+    
+    t.attr('title', 'main.html');
+    console.log("title: ",t.attr('title'));
+
+    t.removeAttr('title');
+    console.log(t.attr('title'));
+    console.groupEnd();
+</script><br>
+<input type="checkbox" id="t" checked="checked">
+<script>
+    console.group('attr VS prop');
+    var t = $('#t');
+    console.log(t.attr('checked'));
+    console.log(t.prop('checked'));
+    console.groupEnd();
+</script>
+</body>
+</html>

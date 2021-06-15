@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        h4{
+            padding-left: 10px;
+        }
+        select, p{
+            margin-left: 20px;
+        }
+        
+        #sub{
+            position: absolute;
+            left:150px;
+            top:170px;
+            padding-top: 20px; padding-bottom: 20px;
+            padding-left: 30px; padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center">선택</h2>
+
+<h3>1. Dropdown List</h3>
+<form action="http://localhost/color.php">
+    <h4>- 색상</h4>
+    <select name="color" id="">
+        <option value="red">빨간색</option>
+        <option value="green">초록색</option>
+        <option value="blue">파란색</option>
+    </select>
+
+    <h4>- 다중선택</h4>
+    <select name="color2" multiple>
+        <option value="red">빨간색</option>
+        <option value="green">초록색</option>
+        <option value="blue">파란색</option>
+    </select>
+    <input type="submit" value="제출" id="sub">
+</form>
+
+<h3>2. radio, checkbox</h3>
+<h4>- radio 버튼</h4>
+   <p>
+    <input type="radio" name="food" value="chi"> 치킨
+    <input type="radio" name="food" value="ham" checked> 햄버거
+    <input type="radio" name="food" value="pizza"> 피자
+</p>
+<p>
+    <input type="radio" name="drink" checked> 콜라
+    <input type="radio" name="drink"> 사이다
+    <input type="radio" name="drink" > 주스
+</p>
+
+<h4>- checkbox 버튼</h4>
+<p>
+    <input type="checkbox" name="sidemenu" checked> 감자튀김
+    <input type="checkbox" name="sidemenu" checked> 치킨너겟
+    <input type="checkbox" name="sidemenu"> 치즈스틱
+    <input type="checkbox" name="sidemenu"> 오징어링
+</p>
+</body>
+</html>

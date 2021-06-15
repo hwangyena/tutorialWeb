@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        header{
+            border-bottom:1px solid;
+        }
+        .container{
+/*            크기를 고정시켜줬기때문에 크기가 작아져도 짤리지 않음*/
+            width:900px;
+            border: solid 1px;
+/*            가운데에 위치*/
+            margin: auto;
+            
+        }
+        nav{
+            float:left;
+            width:150px;
+            border-right: 1px solid;
+        }
+        article{
+            width:500px;
+            float:left;
+            border-left: 1px solid;
+            margin-left: -1px;
+            padding: 10px;
+            border-right: 1px solid;
+        }
+        aside{
+            width:150px;
+            float:left;
+            border-left: 1px solid;
+            margin-left: -1px;
+        }
+        footer{
+            clear:both;
+            border-top: 1px solid;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">       
+    <header>
+        <h1>
+            CSS
+        </h1>       
+    </header>
+    <nav>
+        <ul>
+            <li>position</li>
+            <li>float</li>
+            <li>flex</li>
+        </ul>   
+    </nav>
+    <article>
+        <h2 style="text-align: center">float</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ut maxime similique saepe corrupti atque accusamus, dicta deserunt sapiente. Dolorem delectus quidem, totam reiciendis doloribus pariatur quisquam temporibus vitae aspernatur sapiente iure expedita. Et ipsa saepe laborum, facere accusantium quas explicabo eum inventore labore sapiente voluptatum expedita ad dignissimos beatae!
+    </article>
+    <aside>ad</aside>
+    <footer>copyleft</footer>
+   </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        .blend{
+            border: 5px solid;
+            height: 400px;
+            background: rgba(0, 0, 255, 0.5) url('example3.jpg');
+            background-size: cover;
+            background-blend-mode: saturation;
+            transition: background-color 3s;
+        }
+        .blend:hover{
+            background-color: rgba(255, 0, 0, 0.5);
+            transition: background-color 3s;
+        }
+        
+        #parents{
+            background-image: url(example3.jpg);
+            height: 500px;
+            background-size: cover;
+        }
+        .mix{
+            font-size: 2rem;
+            color:crimson;
+            font-weight: bold;
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+   <h1>1. background blend mode</h1>
+    <div class="blend">  
+    </div>
+    <h1>2. mix blend mode</h1>
+    <div id="parents">
+        <div class="mix">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h1>Dicta fugiat quibusdam porro deleniti dignissimos expedita, nemo hic, ea facilis, maiores voluptatibus facere qui. Doloribus, dolorum sequi distinctio repudiandae odio modi hic natus quos, nam rerum aspernatur neque. Accusantium dolorem eum corrupti magnam, doloremque consectetur eligendi, sunt aliquid rem, laborum et.
+        </div>
+    </div>
+</body>
+</html>

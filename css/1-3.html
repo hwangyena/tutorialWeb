@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            padding-top: 30px;
+        }
+        #parent, #other{
+            border:5px solid tomato;
+        }
+        #parent{
+            position: relative;
+        }
+        #large{
+            height:10000px;
+            background-color: azure;
+        }
+        #me{
+            position: relative;
+            top: 50px;
+            left:50px;
+            background-color: black;
+            color: aliceblue;
+        }
+        #me2{
+            position: absolute;
+            top: 50px;
+            left:50px;
+            background-color: darkblue;
+            color: yellow;
+        }
+        #me3{
+            position: fixed;
+            top: 0;
+            right:0;
+            width:100%;
+            text-align: center;
+            background-color: blueviolet;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="parent">
+       parent
+        <div id="me">relative position</div>
+        <div id="me2">absolute position</div>
+        <div id="me3">fixed position</div>
+    </div>
+    <div id="large"></div>
+</body>
+</html>
